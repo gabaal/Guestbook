@@ -1,68 +1,80 @@
-body, h1, form {
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #f2f2f2; /* Modern grey background */
+  color: #333; /* Text color */
 }
 
 h1 {
-  text-align: center;
-  padding: 20px 0;
-  background-color: #007bff;
-  color: #fff;
+  color: #3498db; /* Blue header text */
 }
 
 form {
-  max-width: 400px;
-  margin: 20px auto;
+  background-color: #fff; /* White form background */
   padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  margin-bottom: 8px;
-}
-
-input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  box-sizing: border-box;
+input,
+button {
+  margin-bottom: 10px;
 }
 
 button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
+  background-color: #3498db; /* Blue button background */
+  color: #fff; /* Button text color */
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
-
 #messageContainer {
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-#messageContainer h3 {
+.message-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff; /* White message container background */
+  padding: 10px;
   margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+button[type="submit"] {
+  background-color: #808080; /* Grey delete button background */
+  color: #fff; /* Button text color */
+  transition: background-color 0.3s; /* Add smooth transition effect */
+}
+
+button[type="submit"]:hover {
+  background-color: #e74c3c; /* Red delete button background on hover */
+}
+h3 {
+  margin-left: 5px; /* Adjust the spacing between message and delete button */
 }
 
 /* Media Query for smaller screens */
 @media screen and (max-width: 600px) {
   form, #messageContainer {
     max-width: 100%;
+  }
+  h3 {
+    margin-left: 5px; /* Adjust the spacing between message and delete button */
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #messageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  h3 {
+    margin-left: 10px; /* Adjust the spacing between message and delete button */
+  }
+  button {
+    margin-top: 5px; /* Adjust the vertical spacing for the delete button */
   }
 }

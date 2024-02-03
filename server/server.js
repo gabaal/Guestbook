@@ -26,6 +26,15 @@ app.get("/messages", (req, res) => {
   }
 })
 
+app.delete('/messages/:id', (req, res) => {
+  try {
+    const id = req.params.id
+    const deletedMessage = db.prepare(`DELETE FROM  messages WHERE id = ?`).run(id)
+    res.status(200).json ({recordDeleted: deletedMessage})
+  } catch(err) {
+    res.status(500).json({error: err})
+  }
+})
 
 // app.get("/messages", function (request, response) {
 //   let messages = [];
