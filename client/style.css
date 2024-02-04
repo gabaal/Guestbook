@@ -3,19 +3,19 @@
 }
 
 body {
-  background-color: #f4f4f2;
+  background-color: #49274a;
   color: #333;
 }
 
 h1 {
-  color: #911825;
+  color: whitesmoke;
   text-align: center;
 }
 
 form {
   max-width: 600px;
   margin: 20px auto;
-  background-color: #ffffff;
+  background-color: #94618e;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
@@ -30,6 +30,10 @@ button {
   /* background-color: #911825; */
   color: black;
   cursor: pointer;
+  background-color: #f4decb;
+}
+button:hover {
+  background-color: #f8eee7;
 }
 
 #messageContainer {
@@ -43,7 +47,7 @@ button {
   justify-content: space-between;
   flex-direction: column;
   align-items: flex-start;
-  background-color: white;
+  background-color: #94618e;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -55,8 +59,8 @@ button {
 }
 
 button.delete-button {
-  background-color: #911825;
-  color: #fff;
+  background-color: #f8eee7;
+  color: black;
   transition: background-color 0.3s;
 }
 
@@ -66,17 +70,22 @@ button.delete-button:hover {
 
 @media only screen and (max-width: 40em) {
 
-  form,
-  #messageContainer {
-    max-width: 100%;
-  }
-  form input {
-    width: 100%;
-  }
+
 
 }
 
 @media only screen and (max-width: 40em){
+  form,
+  #messageContainer {
+    max-width: 100%;
+    position: relative;
+    top:20px;
+  }
+
+  form input {
+    width: 100%;
+  }
+
   .message-item {
     font-size: 10px;
   }
@@ -84,9 +93,7 @@ button.delete-button:hover {
     margin-top: 10px;
     align-self: center;
   }
-  button.delete-button {
-    font-size: 10px;
-  }
+
 }
 
 /* Small devices 640px and up */
@@ -104,6 +111,10 @@ button.delete-button:hover {
   button.delete-button {
     margin-top: 10px;
     align-self: center;
+  }
+  form {
+    position: relative;
+    top:20px;
   }
 }
 
@@ -154,7 +165,10 @@ button.delete-button:hover {
   button.delete-button {
     margin-top: 0;
   }
-
+  form, h1 {
+    position: sticky;
+    top:20px;
+  }
 }
 
 /* Largest devices 1280px and up */
