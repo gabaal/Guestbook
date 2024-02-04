@@ -1,17 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #f2f2f2; /* Modern grey background */
-  color: #333; /* Text color */
+  background-color: #f4f4f2;
+  color: #333;
 }
 
 h1 {
-  color: #3498db; /* Blue header text */
+  color: #911825;
+  text-align: center;
 }
 
 form {
-  background-color: #fff; /* White form background */
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
 input,
@@ -20,61 +27,151 @@ button {
 }
 
 button {
-  background-color: #3498db; /* Blue button background */
-  color: #fff; /* Button text color */
+  /* background-color: #911825; */
+  color: black;
   cursor: pointer;
 }
 
 #messageContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .message-item {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: #fff; /* White message container background */
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-button[type="submit"] {
-  background-color: #808080; /* Grey delete button background */
-  color: #fff; /* Button text color */
-  transition: background-color 0.3s; /* Add smooth transition effect */
+.message-item h3 {
+  margin-left: 10px;
 }
 
-button[type="submit"]:hover {
-  background-color: #e74c3c; /* Red delete button background on hover */
-}
-h3 {
-  margin-left: 5px; /* Adjust the spacing between message and delete button */
+button.delete-button {
+  background-color: #911825;
+  color: #fff;
+  transition: background-color 0.3s;
 }
 
-/* Media Query for smaller screens */
-@media screen and (max-width: 600px) {
-  form, #messageContainer {
+button.delete-button:hover {
+  background-color: #e74c3c;
+}
+
+@media only screen and (max-width: 40em) {
+
+  form,
+  #messageContainer {
     max-width: 100%;
   }
-  h3 {
-    margin-left: 5px; /* Adjust the spacing between message and delete button */
+  form input {
+    width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 40em){
+  .message-item {
+    font-size: 10px;
+  }
+  button.delete-button {
+    margin-top: 10px;
+    align-self: center;
+  }
+  button.delete-button {
+    font-size: 10px;
   }
 }
 
-@media screen and (min-width: 992px) {
+/* Small devices 640px and up */
+@media only screen and (min-width: 40em) {
+  form,
+  #messageContainer {
+    max-width: 100%;
+  }
+  form input {
+    width: 100%;
+  }
+  .message-item {
+    font-size: 12px;
+  }
+  button.delete-button {
+    margin-top: 10px;
+    align-self: center;
+  }
+}
+
+/* Medium devices 768px and up */
+@media only screen and (min-width: 48em) {
+  form,
+  #messageContainer {
+    max-width: 100%;
+  }
+  form input {
+    width: 70%;
+  }
+  form label, form input, form button {
+    font-size: 16px;
+  }
+  button.delete-button {
+    font-size: 14px;
+  }
+  .message-item {
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+  }
+}
+
+/* Large devices 1024px and up */
+@media only screen and (min-width: 64em) {
   #messageContainer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
-  h3 {
-    margin-left: 10px; /* Adjust the spacing between message and delete button */
+  form input {
+    width: 60%;
   }
   button {
-    margin-top: 5px; /* Adjust the vertical spacing for the delete button */
+    margin-top: 5px;
+  }
+  form label, form input, form button {
+    font-size: 18px;
+  }
+  button.delete-button {
+    font-size: 16px;
+  }
+  .message-item {
+    font-size: 16px;
+  }
+  button.delete-button {
+    margin-top: 0;
+  }
+
+}
+
+/* Largest devices 1280px and up */
+@media only screen and (min-width: 80em) {
+  form label, form input, form button {
+    font-size: 20px;
+  }
+  form label, form input, form button {
+    font-size: 18px;
+  }
+  button.delete-button {
+    font-size: 18px;
+  }
+  .message-item {
+    font-size: 18px;
+  }
+  button.delete-button {
+    margin-top: 0;
   }
 }
